@@ -1,0 +1,29 @@
+{
+  "name": "Eng. Shadrack Favour",
+  "title": "Engineering Intelligence",
+  "about": "I design and build software and systems that solve real problems. I focus on full stack development, automation, and scalable architectures.",
+  "projects": [
+    {
+      "id": "proj-1",
+      "title": "Portfolio Website",
+      "description": "Personal portfolio built with modern web technologies and serverless backend.",
+      "link": "https://engshadrackweb.netlify.app",
+      "tags": ["frontend","netlify","serverless"]
+    },
+    {
+      "id": "proj-2",
+      "title": "Automation Toolkit",
+      "description": "Scripts and tools for automating deployment and monitoring tasks.",
+      "link": "",
+      "tags": ["automation","devops"]
+    }
+  ],
+  "contact": {
+    "email": "you@domain.com",
+    "phone": ""
+  },
+  "social": {
+    "github": "https://github.com/yourusername",
+    "linkedin": "https://www.linkedin.com/in/yourprofile"
+  }
+}
