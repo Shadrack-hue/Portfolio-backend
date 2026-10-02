@@ -1,14 +1,12 @@
 {
-  "name": "engshadrack-backend",
+  "name": "shadrack-portfolio-backend",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "netlify dev",
-    "build": "echo \"No build step for functions\"",
-    "start": "netlify dev"
-  },
-  "dependencies": {
-    "node-fetch": "^2.6.7",
-    "validator": "^13.9.0"
+    "test": "node --test tests/*.test.cjs"
   }
 }

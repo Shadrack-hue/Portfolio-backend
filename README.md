@@ -1,42 +1,15 @@
-# Netlify Functions Backend for Portfolio
+# Portfolio API
 
-## What this repo contains
-- Netlify Functions endpoints:
-  - `/.netlify/functions/portfolio` GET returns `data/portfolio.json`
-  - `/.netlify/functions/contact` POST accepts `{ name, email, message }` and sends email via SendGrid
+Shadrack Favour · Electrical & Software Systems Engineer.
 
-## Setup
-1. Install dependencies
-   npm install
+Deploy this repository to Netlify with Node.js 22. `netlify.toml` publishes `public/` and bundles `netlify/functions`. Profile data is imported directly so it is included in the serverless bundle.
 
-2. Local development
-   Install Netlify CLI globally if you don't have it
-   npm i -g netlify-cli
-   netlify dev
+- GET `/.netlify/functions/portfolio`: public profile and project links.
+- POST `/.netlify/functions/contact`: JSON `{ name, email, message }`.
+- OPTIONS is supported for both endpoints; all responses include CORS headers.
 
-3. Environment variables to set in Netlify Site settings or locally in a `.env` file for `netlify dev`
-   - SENDGRID_API_KEY  Set to your SendGrid API key
-   - TO_EMAIL          Destination email for contact form messages
-   - FROM_EMAIL        Optional from address used in outgoing mail
-   - ALLOWED_ORIGIN    Optional CORS origin, e.g., https://engshadrackweb.netlify.app
+Required contact configuration: `SENDGRID_API_KEY`, `TO_EMAIL`, and `FROM_EMAIL` (a SendGrid verified sender). Set `ALLOWED_ORIGIN=https://shadrackweb.vercel.app` for the production frontend. Missing mail configuration returns 503; provider failure returns 502 without exposing provider responses.
 
-## Deploy
-- Push to a Git repository and connect the repo to Netlify
-- Set the environment variables in Netlify UI under Site settings → Build & deploy → Environment
-- Trigger a deploy
+Run `npm test`. Tests mock the mail provider and send no email. Netlify CLI is required for `netlify dev`.
 
-## Frontend usage
-- Fetch portfolio
-  fetch('/.netlify/functions/portfolio')
-
-- Submit contact
-  fetch('/.netlify/functions/contact', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, email, message })
-  })
-
-## Optional enhancements
-- Persist messages to Supabase or Upstash after successful email send
-- Add reCAPTCHA on the frontend and verify token in `contact.js`
-- Add rate limiting or simple in-memory throttling for spam protection
+Production portfolio source: `project2`, matching the HTML served at https://shadrackweb.vercel.app on 2 October 2026. This backend's current production linkage has not been verified; Vercel team access is blocked, and this API uses Netlify Functions paths.
