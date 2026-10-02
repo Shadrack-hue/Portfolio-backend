@@ -1,0 +1,25 @@
+{
+  "name": "Shadrack Favour",
+  "title": "Electrical & Software Systems Engineer",
+  "about": "I build at the intersection of electrical engineering, software systems and artificial intelligence.",
+  "projects": [
+    {
+      "id": "portfolio",
+      "title": "Portfolio",
+      "link": "https://shadrackweb.vercel.app"
+    },
+    {
+      "id": "face-detect",
+      "title": "Face Detection",
+      "link": "https://face-detect-zeta.vercel.app"
+    },
+    {
+      "id": "article",
+      "title": "From Circuits to Code",
+      "link": "https://shadrackarticle.vercel.app"
+    }
+  ],
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/shadrack-favour-bsc-80b284289/"
+  }
+}
